@@ -1,0 +1,13 @@
+version: "3"
+services:
+  express-api:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "4000:4000"
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
